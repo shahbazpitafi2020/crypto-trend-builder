@@ -1,16 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/Navbar";
+import NewsGrid from "@/components/NewsGrid";
+import BitcoinNewsSection from "@/components/BitcoinNewsSection";
+import Sidebar from "@/components/Sidebar";
+import AltcoinSection from "@/components/AltcoinSection";
+import AIWeb3Section from "@/components/AIWeb3Section";
+import Footer from "@/components/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <div className="py-6">
+        <NewsGrid />
+
+        <div className="container py-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2">
+              <BitcoinNewsSection />
+            </div>
+            <div>
+              <Sidebar />
+            </div>
+          </div>
+        </div>
+
+        <AltcoinSection />
+        <AIWeb3Section />
+      </div>
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
