@@ -84,12 +84,12 @@ const Admin = () => {
 
     const userIds = [...new Set(roles.map(r => r.user_id))];
     const { data: profiles } = await supabase
-      .from("profiles")
+      .from("profiles" as any)
       .select("*")
       .in("user_id", userIds);
 
     const members = userIds.map(uid => {
-      const profile = profiles?.find(p => p.user_id === uid);
+      const profile = (profiles as any[])?.find((p: any) => p.user_id === uid);
       const userRoles = roles.filter(r => r.user_id === uid).map(r => r.role);
       return {
         user_id: uid,
