@@ -8,7 +8,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index.tsx";
 import Auth from "./pages/Auth.tsx";
 import Admin from "./pages/Admin.tsx";
-import PostDetail from "./pages/PostDetail.tsx";
+import PostDetail from "./pages/PostDetail.tsx"; // Individual News Page
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -25,6 +25,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/admin" element={<Admin />} />
+              {/* This is the Dynamic Route for News Articles */}
               <Route path="/post/:slug" element={<PostDetail />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
